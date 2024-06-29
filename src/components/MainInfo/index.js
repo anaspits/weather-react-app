@@ -1,1 +1,1 @@
-export {default} from './MainInfo'
+export {default} from './Activities'
