@@ -1,13 +1,22 @@
-@tailwind base;
+@layer tailwind {
+  @tailwind base;
+}
 @tailwind components;
 @tailwind utilities;
 
-@import '../assets/icons/style.css';
+@import "../assets/icons/icons-styles.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+  --mantine-font-size-2xl: 2rem;
+  --mantine-font-size-3xl: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +35,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-size: var(--mantine-font-size-2xl);
+  font-size: var(--mantine-font-size-3xl);
 }
 
 @layer utilities {

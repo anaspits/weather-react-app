@@ -1,0 +1,12 @@
+.navbar {
+  width: rem(80px);
+  /*  height: rem(750px); */
+  padding: var(--mantine-spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarMain {
+  flex: 1;
+  margin-top: rem(50px);
+}

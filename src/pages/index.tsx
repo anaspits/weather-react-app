@@ -1,14 +1,104 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { useState, useEffect } from "react";
+import MainInfo from "@/components/MainInfo/MainInfo";
+import Menu from "@/components/Menu/Menu";
+import { SimpleGrid, BackgroundImage, Button, Grid, Group, rem, Flex } from "@mantine/core";
 
-const inter = Inter({ subsets: ["latin"] });
+type WeatherInformation = {
+  city: string;
+  currentWeatherCondition: string;
+  currentTemperature: string;
+};
+
+const weatherInfo: WeatherInformation = {
+  city: "New York",
+  currentWeatherCondition: "Cloudy",
+  currentTemperature: "22°C",
+};
+
+const getBackgroundImage = (condition: string) => {
+  switch (condition.toLowerCase()) {
+    case "sunny":
+      return "/sun-rays-cloudy-sky.png";
+    case "cloudy":
+      return "/blue-sky-with-windy-clouds.png";
+    case "rainy":
+      return "/window-with-raindrops-it-lights.png";
+    case "stormy":
+      return "/light-dark-dramatic-storm-clouds.png";
+    default:
+      return "/sun-rays-cloudy-sky.png";
+  }
+};
 
 export default function Home() {
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+    setBackgroundImage(getBackgroundImage(weatherInfo.currentWeatherCondition));
+  }, [weatherInfo.currentWeatherCondition]);
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+    <main className="min-h-screen">
+      <BackgroundImage
+        src={backgroundImage}
+        className="min-h-screen bg-cover bg-center"
+      >
+        <div className="bg-black bg-opacity-40 min-h-screen p-14">
+          <MainInfo />
+          <Menu/>
+
+                    {/* Group */}
+{/*           <Group justify="space-between" className="px-10">
+          <Button >Button 1</Button> 
+          <Button >Button 2</Button> 
+          </Group>  */}
+
+          {/* Grid */}
+{/*           <Grid justify="space-between" align="stretch" className="p-10">
+            <Grid.Col span={2} style={{ minHeight: rem(80) }}>
+            <Button >Button 3</Button> 
+            </Grid.Col>
+            <Grid.Col span={2}>
+            <Button >Button 4</Button> 
+            </Grid.Col>
+          </Grid> 
+
+          <Grid>
+      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>1</Grid.Col>
+      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>2</Grid.Col>
+      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>3</Grid.Col>
+      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>4</Grid.Col>
+    </Grid> */}
+
+          {/* Flex */}
+{/*            <Flex
+            mih={50}
+            bg="rgba(0, 0, 0, .3)"
+            gap="xl"
+            align="center"
+            direction="row"
+            wrap="wrap"
+            justify="space-between"
+          >
+            <MainInfo></MainInfo>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+            <Button>Button 3</Button>
+          </Flex>  */}
+
+{/*           <SimpleGrid
+            cols={{ base: 1, sm: 2, lg: 5 }}
+            spacing={{ base: 10, sm: "xl" }}
+            verticalSpacing={{ base: "md", sm: "xl" }}
+          >
+            <div className="bg-white bg-opacity-20 p-4 rounded-lg">1</div>
+            <div className="bg-white bg-opacity-20 p-4 rounded-lg">2</div>
+            <div className="bg-white bg-opacity-20 p-4 rounded-lg">3</div>
+            <div className="bg-white bg-opacity-20 p-4 rounded-lg">4</div>
+            <div className="bg-white bg-opacity-20 p-4 rounded-lg">5</div>
+          </SimpleGrid> */}
+        </div>
+                    {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/pages/index.tsx</code>
@@ -114,7 +204,8 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
+      </BackgroundImage>
     </main>
   );
 }

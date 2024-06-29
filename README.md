@@ -7,7 +7,7 @@ Make sure you already have Node.js and npm installed in your system.
 ## Install
 
 Clone the repository:
-git clone --add link --
+git clone `https://github.com/anaspits/weather-react-app.git`
 
 Install the packages using the command `npm install`
 
