@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import MainInfo from "@/components/MainInfo/MainInfo";
 import Menu from "@/components/Menu/Menu";
 import { SimpleGrid, BackgroundImage, Button, Grid, Group, rem, Flex } from "@mantine/core";
-import Activities from "@/components/Activities/Activities";
+import MiddleSection from "@/components/MiddleSection/MiddleSection";
+import WeeklyForecast from "@/components/WeeklyForecast/WeaklyForecast";
 
 type WeatherInformation = {
   city: string;
@@ -44,12 +45,19 @@ export default function Home() {
         src={backgroundImage}
         className="min-h-screen bg-cover bg-center"
       >
-        <div className="bg-black bg-opacity-40 min-h-screen p-14">
-          <MainInfo />
+        <div className="min-h-screen p-14">
+{/*           <MainInfo />
           <span className="hidden md:flex">
           <Menu />
           </span>
+<Activities /> */}
 
+<Grid justify="space-between">
+      <Grid.Col span={12}><MainInfo /></Grid.Col>
+      <Grid.Col span={1}><Menu /></Grid.Col>
+      <Grid.Col span={8} ><MiddleSection /></Grid.Col>
+      <Grid.Col span={3} ><WeeklyForecast /></Grid.Col>
+    </Grid>
                     {/* Group */}
 {/*           <Group justify="space-between" className="px-10">
           <Button >Button 1</Button> 

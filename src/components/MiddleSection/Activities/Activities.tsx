@@ -1,4 +1,4 @@
-import { Flex, SimpleGrid, Text } from "@mantine/core";
+import { Card, Flex, Grid, Image, SimpleGrid, Text } from "@mantine/core";
 
 import classes from "./activities.module.css";
 import ActivityCard from "./ActivityCard/ActivityCard";
@@ -12,7 +12,6 @@ const activities = [
 
 function Activities() {
   return (
-    <>
       <div className="bg-white bg-opacity-20 py-4 px-10 rounded-3xl">
         <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
           <Flex
@@ -30,12 +29,10 @@ function Activities() {
           <SimpleGrid cols={4}>
             {activities.map((activity, index) => (
               <ActivityCard key={index} activity={activity} index={index} />
-
             ))}
           </SimpleGrid>
         </Flex>
       </div>
-    </>
   );
 }
 

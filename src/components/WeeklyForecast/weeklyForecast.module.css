@@ -1,0 +1,7 @@
+.divBackground {
+  /*   background-image: url("path/to/your/image.jpg"); */ /* Replace with your image path */
+  background-size: contain;
+  background-position: bottom;
+  width: 100%;
+  background-repeat: no-repeat;
+}
