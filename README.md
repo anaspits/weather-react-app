@@ -28,8 +28,12 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing by modifying the files. The page auto-updates as you edit the file.
-If you want to see how the background changes depending on the weather you can go to `\source\repos\weather-app\src\pages\index.tsx`
-and change the `currentWeatherCondition` from `Cloudy` to `Stormy`, `Sunny` or `Rainy` at the `weatherInfo` const.
+
+## Try out
+
+If you want to see how the \* _background_ \* changes depending on the weather you can go to `\source\repos\weather-app\src\pages\index.tsx` and change the `currentWeatherCondition` from `Cloudy` to `Stormy`, `Sunny` or `Rainy` at the `weatherInfo` const.
+
+To check the \* _mobile_ \* layout go to your broswer's DevTools click the device toolbar (in the action bar at the top left) and choose a mobile device from the list or input you custom dimensions and **refresh the page** in orde to view the app at the corresponding device dimensions.
 
 <!-- [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 

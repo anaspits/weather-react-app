@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  Center,
-  Avatar,
-  Flex,
-} from "@mantine/core";
+import { Center, Avatar, Flex } from "@mantine/core";
 import NavbarLink from "./NavbarLink/NavbarLink";
 
 import classes from "./menu.module.css";
@@ -28,7 +24,9 @@ function Menu() {
   ));
 
   return (
-    <nav className={`${classes.navbar} bg-white bg-opacity-20 p-4 rounded-3xl h-full`}> {/* todo navbar should be at the bottom */}
+    <nav
+      className={`${classes.navbar} bg-white bg-opacity-20 p-4 rounded-3xl h-full`}
+    >
       <Center>
         <Avatar src="/pictures/user1.png" radius="xl" size="lg" />
       </Center>

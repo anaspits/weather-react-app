@@ -5,7 +5,7 @@ type WeatherInformation = {
   currentDate: string;
   currentDay: string;
 };
-//TODO
+
 const weatherInfo : WeatherInformation =
 {
   city: "New York",

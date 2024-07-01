@@ -2,7 +2,7 @@ import { Card, Flex, Grid, Image, SimpleGrid, Text } from "@mantine/core";
 
 import classes from "./middleSection.module.css";
 import Activities from "./Activities/Activities";
-import HourForecast from "./HourForecast/HourForecast";
+import HourForecast from "../shared/HourForecast/HourForecast";
 
 function MiddleSection() {
   return (

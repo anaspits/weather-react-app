@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import MainInfo from "@/components/MainInfo/MainInfo";
+import MainInfo from "@/components/DesktopLayout/MainInfo/MainInfo";
 import Menu from "@/components/Menu/Menu";
 import { SimpleGrid, BackgroundImage, Button, Grid, Group, rem, Flex } from "@mantine/core";
 import MiddleSection from "@/components/MiddleSection/MiddleSection";
-import WeeklyForecast from "@/components/WeeklyForecast/WeaklyForecast";
+import WeeklyForecast from "@/components/DesktopLayout/WeeklyForecast/WeaklyForecast";
 import { detectDevice  } from "../ModuleHandler/ModuleHandler";
 import MobileLayout from "@/components/MobileLayout/MobileLayout";
 import DesktopLayout from "@/components/DesktopLayout/DesktopLayout";

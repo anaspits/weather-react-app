@@ -1,7 +1,7 @@
 import { Grid } from "@mantine/core";
-import MainInfo from "../MainInfo/MainInfo";
+import MainInfo from "./MainInfo/MainInfo";
 import MiddleSection from "../MiddleSection/MiddleSection";
-import WeeklyForecast from "../WeeklyForecast/WeaklyForecast";
+import WeeklyForecast from "./WeeklyForecast/WeaklyForecast";
 import Menu from "../Menu/Menu";
 
 

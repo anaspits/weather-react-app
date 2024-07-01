@@ -1,27 +1,14 @@
-// src/components/WeeklyForecast.tsx
 import React from "react";
 import {
   BackgroundImage,
-  Card,
   Flex,
-  Grid,
   Group,
-  Stack,
   Text,
 } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
 import classes from "./CardsCarousel.module.css";
 import classes1 from "./weeklyForecast.module.css";
 import "@mantine/carousel/styles.css";
-import WeatherCarousel from "./WeatherCarousel/WeatherCarousel";
-
-const weeklyData = [
-  { day: "Fri", icon: "icon-rain", temp: "26°C" },
-  { day: "Sat", icon: "icon-sun", temp: "22°C" },
-  { day: "Sun", icon: "icon-cloud-sun", temp: "26°C" },
-  { day: "Mon", icon: "icon-rain-sun", temp: "20°C" },
-  { day: "Tue", icon: "icon-storm", temp: "18°C" },
-];
+import WeatherCarousel from "../../shared/WeatherCarousel/WeatherCarousel";
 
 const airConditions = [
   {
@@ -36,7 +23,7 @@ const airConditions = [
 
 const timeData = { time: "8:00PM GMT" };
 
-const WeeklyForecast: React.FC = () => { //todo remove react.fc
+const WeeklyForecast = () => {
   return (
     <div className="bg-white bg-opacity-20 py-10 rounded-3xl h-full">
       <BackgroundImage
@@ -45,40 +32,7 @@ const WeeklyForecast: React.FC = () => { //todo remove react.fc
       >
         <div className="px-4">
           <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
-{/*              <Carousel
-              height="fit-content"
-              slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-              slideGap={{ base: 0, sm: "md" }}
-              align="start"
-              slidesToScroll={1}
-              styles={{
-                control: {
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  color: '#FFCC21',
-                  boxShadow: 'none',
-                  fontSize: '1.5rem',
-                }
-              }}
-            >
-              {weeklyData.map((item, index) => (
-                <Carousel.Slide key={index}>
-                  <Flex
-                    gap="xs"
-                    justify="center"
-                    align="center"
-                    direction="column"
-                    mih={50}
-                  >
-                    <Text c="white" size="lg">
-                      {item.day}
-                    </Text>
-                    <i className={`${item.icon} text-white text-xl`}></i>
-                  </Flex>
-                </Carousel.Slide>
-              ))}
-            </Carousel>  */}
-<WeatherCarousel />
+            <WeatherCarousel />
             <Flex
               gap={1}
               mih={60}

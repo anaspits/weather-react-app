@@ -19,7 +19,7 @@ const dataDesktop = [
   { time: "2:00", temp: 16, wind: "15km/h", icon: "storm" },
   { time: "4:00", temp: 20, wind: "15km/h", icon: "storm" },
   { time: "6:00", temp: 22, wind: "15km/h", icon: "strormyNight" },
-  { time: "8:00", temp: 16, wind: "15km/h", icon: "storm" }, 
+  { time: "8:00", temp: 16, wind: "15km/h", icon: "storm" },
 ];
 
 const dataMobile = [
@@ -35,9 +35,12 @@ type WeatherChartProps = {
 
 const WeatherChart = ({ isMobile }: WeatherChartProps) => {
   return (
-     <div className="md:p-4 w-full">
+    <div className="md:p-4 w-full">
       <ResponsiveContainer width="100%" height={200}>
-        <LineChart data={isMobile ? dataMobile : dataDesktop} margin={{ left: 20, right: 20 }}>
+        <LineChart
+          data={isMobile ? dataMobile : dataDesktop}
+          margin={{ left: 20, right: 20 }}
+        >
           <XAxis dataKey="time" hide padding={{ left: 30, right: 30 }} />
           <YAxis hide padding={{ top: 30, bottom: 30 }} />
           <Tooltip
@@ -52,7 +55,13 @@ const WeatherChart = ({ isMobile }: WeatherChartProps) => {
             dot={false}
             activeDot={{ r: 4, fill: "#FFCC21" }}
           >
-            <LabelList dataKey="temp" position="top" offset={10} fill="#fff" />
+            <LabelList
+              dataKey="temp"
+              position="top"
+              offset={10}
+              fill="#fff"
+              formatter={(value: any) => `${value}°C`}
+            />
             <LabelList dataKey="icon" content={<CustomLabelWithIcon />} />
             <LabelList
               dataKey="wind"
@@ -72,7 +81,7 @@ const WeatherChart = ({ isMobile }: WeatherChartProps) => {
           <CartesianGrid vertical={false} horizontal={false} />
         </LineChart>
       </ResponsiveContainer>
-     </div>
+    </div>
   );
 };
 

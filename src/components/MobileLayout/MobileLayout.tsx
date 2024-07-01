@@ -1,7 +1,7 @@
 import { Grid } from "@mantine/core";
 import MainInfoMobile from "./MainInfoMobile/MainInfoMobile";
-import WeatherCarousel from "../WeeklyForecast/WeatherCarousel/WeatherCarousel";
-import HourForecast from "../MiddleSection/HourForecast/HourForecast";
+import WeatherCarousel from "../shared/WeatherCarousel/WeatherCarousel";
+import HourForecast from "../shared/HourForecast/HourForecast";
 
 
 function MobileLayout() {
