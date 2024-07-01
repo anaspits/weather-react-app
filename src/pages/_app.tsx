@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import '@mantine/core/styles.css';
 
-import { DEFAULT_THEME } from '@mantine/core';
+/* import { DEFAULT_THEME } from '@mantine/core'; */
 import { MantineProvider, createTheme } from '@mantine/core';
 import type { AppProps } from "next/app";
 

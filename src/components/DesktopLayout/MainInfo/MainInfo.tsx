@@ -12,7 +12,7 @@ const weatherInfo: WeatherInformation = {
   city: "New York",
   currentWeatherCodtition: "Cloudy",
   currentTemperature: "22°C",
-  currentDate: "Synday",
+  currentDate: "Sunday",
   currentDay: "12 Dec 2023",
 };
 

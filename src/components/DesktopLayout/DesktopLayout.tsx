@@ -1,8 +1,8 @@
 import { Grid } from "@mantine/core";
 import MainInfo from "./MainInfo/MainInfo";
-import MiddleSection from "../MiddleSection/MiddleSection";
+import MiddleSection from "./MiddleSection/MiddleSection"
 import WeeklyForecast from "./WeeklyForecast/WeaklyForecast";
-import Menu from "../Menu/Menu";
+import Menu from "./Menu/Menu"
 
 
 function DesktopLayout() {
