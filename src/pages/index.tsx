@@ -4,6 +4,8 @@ import Menu from "@/components/Menu/Menu";
 import { SimpleGrid, BackgroundImage, Button, Grid, Group, rem, Flex } from "@mantine/core";
 import MiddleSection from "@/components/MiddleSection/MiddleSection";
 import WeeklyForecast from "@/components/WeeklyForecast/WeaklyForecast";
+import { parse } from "next-useragent";
+import MobileLayout from "@/components/MobileLayout/MobileLayout";
 
 type WeatherInformation = {
   city: string;
@@ -32,20 +34,45 @@ const getBackgroundImage = (condition: string) => {
   }
 };
 
-export default function Home() {
+export function detectDevice(userAgent: any) {
+  const ua = parse(userAgent);
+  return {
+    isMobile: ua.isMobile,
+    isTablet: ua.isTablet,
+    isDesktop: !ua.isMobile && !ua.isTablet,
+  };
+}
+
+export async function getServerSideProps({ req }: any) {
+  const userAgent = req.headers['user-agent'] || '';
+  const deviceType = detectDevice(userAgent);
+
+  return {
+    props: { deviceType },
+  };
+}
+
+export default function Home({ deviceType }: any) {
+  const { isMobile, isTablet, isDesktop } = deviceType;
   const [backgroundImage, setBackgroundImage] = useState("");
 
   useEffect(() => {
     setBackgroundImage(getBackgroundImage(weatherInfo.currentWeatherCondition));
   }, [weatherInfo.currentWeatherCondition]);
 
+  
   return (
     <main className="min-h-screen">
       <BackgroundImage
         src={backgroundImage}
         className="min-h-screen bg-cover bg-center"
       >
-        <div className="min-h-screen p-14">
+        <div>
+      {isMobile && <MobileLayout />}
+
+    </div>
+
+         {(isDesktop || isTablet) &&  <div className="min-h-screen p-14">
 {/*           <MainInfo />
           <span className="hidden md:flex">
           <Menu />
@@ -109,6 +136,7 @@ export default function Home() {
             <div className="bg-white bg-opacity-20 p-4 rounded-lg">5</div>
           </SimpleGrid> */}
         </div>
+        }
                     {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;

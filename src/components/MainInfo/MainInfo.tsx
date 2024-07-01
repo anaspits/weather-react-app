@@ -10,7 +10,7 @@ type WeatherInformation = {
 
 type WeatherInformationProps = {
   weatherInfo: React.Dispatch<React.SetStateAction<WeatherInformation>>;
-};
+}; /* todo */
 
 const weatherInfo: WeatherInformation = {
   city: "New York",
