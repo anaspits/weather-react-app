@@ -1,4 +1,4 @@
-import { Card, Flex, Grid, Image, SimpleGrid, Text } from "@mantine/core";
+import { Button, Card, Flex, Grid, Image, SimpleGrid, Text } from "@mantine/core";
 
 import classes from "./hourForecast.module.css";
 import WeatherChart from "./WeatherChart/WeatherChart";
@@ -12,7 +12,7 @@ const hourlyData = [
 
 function HourForecast() {
   return (
-      <div className="bg-white bg-opacity-20 pt-4 px-10 rounded-3xl w-full">
+      <div className="bg-white bg-opacity-20 pt-4 px-3 md:px-10 rounded-3xl w-full">
         <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
           <Flex
             gap="xs"
@@ -27,9 +27,13 @@ function HourForecast() {
             </Text>
           </Flex>
           <WeatherChart />
-          <SimpleGrid cols={4}>
-
-          </SimpleGrid> 
+          <span className="lg:hidden text-center mb-4 lg:mb-0">
+          <Button   styles={{
+        root: { backgroundColor: '#EACA8F' },
+        label: { color: 'white' },
+        inner: { fontSize: 15 },
+      }}>5-dour forecast</Button>
+      </span>
         </Flex>
       </div>
   );

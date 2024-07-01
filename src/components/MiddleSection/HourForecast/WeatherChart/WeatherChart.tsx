@@ -17,9 +17,9 @@ const data = [
   { time: "22:00", temp: 26, wind: "9.3km/h", icon: "night" },
   { time: "00:00", temp: 22, wind: "12km/h", icon: "strormyNight" },
   { time: "2:00", temp: 16, wind: "15km/h", icon: "storm" },
-  { time: "4:00", temp: 20, wind: "15km/h", icon: "storm" },
+ /*  { time: "4:00", temp: 20, wind: "15km/h", icon: "storm" },
   { time: "6:00", temp: 22, wind: "15km/h", icon: "strormyNight" },
-  { time: "8:00", temp: 16, wind: "15km/h", icon: "storm" },
+  { time: "8:00", temp: 16, wind: "15km/h", icon: "storm" }, */
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => { /* todo delete */
@@ -37,7 +37,7 @@ const CustomTooltip = ({ active, payload, label }: any) => { /* todo delete */
 
 const WeatherChart = () => {
   return (
-    <div className="p-4">
+     <div className="md:p-4 w-full">
       <ResponsiveContainer width="100%" height={200}>
         <LineChart data={data} margin={{ left: 20, right: 20 }}>
           <XAxis dataKey="time" hide padding={{ left: 30, right: 30 }} />
@@ -74,7 +74,7 @@ const WeatherChart = () => {
           <CartesianGrid vertical={false} horizontal={false} />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+     </div>
   );
 };
 
