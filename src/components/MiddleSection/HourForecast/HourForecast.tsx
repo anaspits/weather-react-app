@@ -7,8 +7,11 @@ import {
 import classes from "./hourForecast.module.css";
 import WeatherChart from "./WeatherChart/WeatherChart";
 
+type HourForecastProps = {
+  isMobile: boolean;
+};
 
-function HourForecast() {
+function HourForecast({isMobile}: HourForecastProps) {
   return (
     <div className="bg-white bg-opacity-20 pt-4 px-3 md:px-10 rounded-3xl w-full">
       <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
@@ -24,7 +27,7 @@ function HourForecast() {
             24-hour forecast
           </Text>
         </Flex>
-        <WeatherChart />
+        <WeatherChart isMobile={isMobile}/>
         <span className="lg:hidden text-center mb-4 lg:mb-0">
           <Button
             styles={{

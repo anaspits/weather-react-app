@@ -9,7 +9,7 @@ function MobileLayout() {
     <Grid justify="space-between">
       <Grid.Col span={12}><MainInfoMobile /></Grid.Col>
       <Grid.Col span={12}><div className="mx-2"><WeatherCarousel/></div></Grid.Col>
-      <Grid.Col span={12} ><div className="mx-2"><HourForecast/></div></Grid.Col>
+      <Grid.Col span={12} ><div className="mx-2"><HourForecast isMobile={true}/></div></Grid.Col>
     </Grid>
   );
 }

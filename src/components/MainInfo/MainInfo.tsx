@@ -53,7 +53,7 @@ function MainInfo() {
           h={200}
           w="auto"
           fit="contain"
-          src="/sun-cloud.png"
+          src="/pictures/sun-cloud.png"
           alt="sun-cloud"
         />
       </div>

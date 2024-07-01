@@ -23,15 +23,15 @@ const weatherInfo: WeatherInformation = {
 const getBackgroundImage = (condition: string) => {
   switch (condition.toLowerCase()) {
     case "sunny":
-      return "/sun-rays-cloudy-sky.png";
+      return "/pictures/sun-rays-cloudy-sky.png";
     case "cloudy":
-      return "/blue-sky-with-windy-clouds.png";
+      return "/pictures/blue-sky-with-windy-clouds.png";
     case "rainy":
-      return "/window-with-raindrops-it-lights.png";
+      return "/pictures/window-with-raindrops-it-lights.png";
     case "stormy":
-      return "/light-dark-dramatic-storm-clouds.png";
+      return "/pictures/light-dark-dramatic-storm-clouds.png";
     default:
-      return "/sun-rays-cloudy-sky.png";
+      return "/pictures/sun-rays-cloudy-sky.png";
   }
 };
 

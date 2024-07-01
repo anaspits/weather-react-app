@@ -30,7 +30,7 @@ function Menu() {
   return (
     <nav className={`${classes.navbar} bg-white bg-opacity-20 p-4 rounded-3xl h-full`}> {/* todo navbar should be at the bottom */}
       <Center>
-        <Avatar src="/user1.png" radius="xl" size="lg" />
+        <Avatar src="/pictures/user1.png" radius="xl" size="lg" />
       </Center>
 
       <div className={classes.navbarMain}>

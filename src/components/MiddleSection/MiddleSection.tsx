@@ -14,7 +14,7 @@ function MiddleSection() {
       wrap="wrap"
     >
       <Activities />
-      <HourForecast />
+      <HourForecast isMobile={false} />
     </Flex>
   );
 }

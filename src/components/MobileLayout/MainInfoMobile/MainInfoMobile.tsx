@@ -41,7 +41,7 @@ function MainInfoMobile() {
           </Grid.Col>
           <Grid.Col span={6}>
             <Flex justify="flex-end">
-              <Avatar src="/user1.png" radius="xl" size="sm" />
+              <Avatar src="/pictures/user1.png" radius="xl" size="sm" />
             </Flex>
           </Grid.Col>
           <Grid.Col span={12}>
@@ -56,7 +56,7 @@ function MainInfoMobile() {
                 h={200}
                 w="auto"
                 fit="contain"
-                src="/sun-cloud.png"
+                src="/pictures/sun-cloud.png"
                 alt="sun-cloud"
               />
             </Flex>
