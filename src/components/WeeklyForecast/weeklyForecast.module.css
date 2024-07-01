@@ -5,3 +5,49 @@
   width: 100%;
   background-repeat: no-repeat;
 }
+
+.custom-control {
+  color: #ffcc21;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  opacity: 0.5;
+}
+
+.carousel-slide:nth-child(3n) .carousel-item {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.carousel-slide:nth-child(3n-1) .carousel-item,
+.carousel-slide:nth-child(3n + 1) .carousel-item {
+  transform: scale(1.25);
+  opacity: 0.75;
+}
+
+.carousel-slide:nth-child(3n-2) .carousel-item,
+.carousel-slide:nth-child(3n + 2) .carousel-item {
+  transform: scale(1);
+  opacity: 0.5;
+}
+
+.day {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}

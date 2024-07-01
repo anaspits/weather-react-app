@@ -12,7 +12,7 @@ const hourlyData = [
 
 function HourForecast() {
   return (
-      <div className="bg-white bg-opacity-20 py-4 px-10 rounded-3xl w-full">
+      <div className="bg-white bg-opacity-20 pt-4 px-10 rounded-3xl w-full">
         <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
           <Flex
             gap="xs"

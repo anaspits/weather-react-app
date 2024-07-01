@@ -22,7 +22,7 @@ const data = [
   { time: "8:00", temp: 16, wind: "15km/h", icon: "storm" },
 ];
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label }: any) => { /* todo delete */
   /*   if (active && payload && payload.length) {
     return (
       <div className="bg-white p-2 rounded shadow">

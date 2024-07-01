@@ -12,7 +12,7 @@ const activities = [
 
 function Activities() {
   return (
-      <div className="bg-white bg-opacity-20 py-4 px-10 rounded-3xl">
+      <div className="bg-white bg-opacity-20 py-4 px-10 rounded-3xl w-full">
         <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
           <Flex
             gap="xs"

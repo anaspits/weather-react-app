@@ -1,0 +1,58 @@
+.customPrevIcon,
+.customNextIcon {
+  color: #ffcc21;
+  font-size: 2rem; /* Adjust the size as needed */
+}
+
+.customControl {
+  color: #ffcc21;
+  color: #ffcc21;
+  /* Center vertically */
+
+  /* Adjust for vertical position */
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.carouselItem0,
+.carouselItem4 {
+  transform: scale(0.8);
+  text-align: center;
+}
+
+.carouselItem1,
+.carouselItem3 {
+  transform: scale(0.9);
+  text-align: center;
+}
+
+.carouselItem2 {
+  transform: scale(1.1);
+  text-align: center;
+}
+
+.carouselItem2 .textCenter {
+  transform: scale(1.2);
+  text-align: center;
+}
+
+.carouselItem1 .textCenter,
+.carouselItem3 .textCenter {
+  transform: scale(1);
+  text-align: center;
+}
+
+.carouselItem0 .textCenter,
+.carouselItem4 .textCenter {
+  transform: scale(0.8);
+  text-align: center;
+}
+
+.carouselItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  opacity: 0.5;
+}

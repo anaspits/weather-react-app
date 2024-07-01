@@ -13,6 +13,7 @@ import { Carousel } from "@mantine/carousel";
 import classes from "./CardsCarousel.module.css";
 import classes1 from "./weeklyForecast.module.css";
 import "@mantine/carousel/styles.css";
+import WeatherCarousel from "./WeatherCarousel/WeatherCarousel";
 
 const weeklyData = [
   { day: "Fri", icon: "icon-rain", temp: "26°C" },
@@ -35,21 +36,30 @@ const airConditions = [
 
 const timeData = { time: "8:00PM GMT" };
 
-const WeeklyForecast: React.FC = () => {
+const WeeklyForecast: React.FC = () => { //todo remove react.fc
   return (
-    <div className="bg-white bg-opacity-20 py-10 rounded-3xl">
+    <div className="bg-white bg-opacity-20 py-10 rounded-3xl h-full">
       <BackgroundImage
         src="pictures/vector.svg"
         className={classes1.divBackground}
       >
         <div className="px-4">
           <Flex gap="lg" justify="center" direction="column" wrap="nowrap">
-            <Carousel
+{/*              <Carousel
               height="fit-content"
               slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
               slideGap={{ base: 0, sm: "md" }}
               align="start"
               slidesToScroll={1}
+              styles={{
+                control: {
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  color: '#FFCC21',
+                  boxShadow: 'none',
+                  fontSize: '1.5rem',
+                }
+              }}
             >
               {weeklyData.map((item, index) => (
                 <Carousel.Slide key={index}>
@@ -67,14 +77,11 @@ const WeeklyForecast: React.FC = () => {
                   </Flex>
                 </Carousel.Slide>
               ))}
-
-              {/*       <Carousel.Slide>2</Carousel.Slide>
-      <Carousel.Slide>3</Carousel.Slide> */}
-              {/* ...other slides */}
-            </Carousel>
-
+            </Carousel>  */}
+<WeatherCarousel />
             <Flex
               gap={1}
+              mih={60}
               justify="center"
               align="center"
               direction="row"
@@ -91,7 +98,7 @@ const WeeklyForecast: React.FC = () => {
             {airConditions.map((condition, index) => (
               <Flex
                 key={index}
-                mih={50}
+                mih={60}
                 justify="center"
                 align="start"
                 direction="column"
