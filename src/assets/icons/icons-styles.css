@@ -1,10 +1,10 @@
 @font-face {
   font-family: "weather-icons";
-  src: url("fonts/weather-icons.eot?5jd8iz");
-  src: url("fonts/weather-icons.eot?5jd8iz#iefix") format("embedded-opentype"),
-    url("fonts/weather-icons.ttf?5jd8iz") format("truetype"),
-    url("fonts/weather-icons.woff?5jd8iz") format("woff"),
-    url("fonts/weather-icons.svg?5jd8iz#icomoon") format("svg");
+  src: url("fonts/weather-icons.eot?3y4h0u");
+  src: url("fonts/weather-icons.eot?3y4h0u#iefix") format("embedded-opentype"),
+    url("fonts/weather-icons.ttf?3y4h0u") format("truetype"),
+    url("fonts/weather-icons.woff?3y4h0u") format("woff"),
+    url("fonts/weather-icons.svg?3y4h0u#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-clock:before {
+  content: "\e914";
+  color: #fff;
+}
 .icon-wind:before {
   content: "\e904";
   color: #fff;
@@ -78,14 +82,6 @@
   content: "\e90a";
   color: #fff;
 }
-.icon-icon-7:before {
-  content: "\e90b";
-  color: #fff;
-}
-.icon-icon-8:before {
-  content: "\e90c";
-  color: #fff;
-}
 .icon-cloud-sun:before {
   content: "\e90d";
   color: #fff;
@@ -94,12 +90,8 @@
   content: "\e90e";
   color: #fff;
 }
-.icon-tempereture:before {
+.icon-temperature:before {
   content: "\e911";
-  color: #fff;
-}
-.icon-vector:before {
-  content: "\e912";
   color: #fff;
 }
 .icon-pin:before {

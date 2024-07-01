@@ -2,6 +2,7 @@ import { Card, Flex, Grid, Image, SimpleGrid, Text } from "@mantine/core";
 
 import classes from "./middleSection.module.css";
 import Activities from "./Activities/Activities";
+import HourForecast from "./HourForecast/HourForecast";
 
 function MiddleSection() {
   return (
@@ -13,7 +14,7 @@ function MiddleSection() {
       wrap="wrap"
     >
       <Activities />
-      <Activities />
+      <HourForecast />
     </Flex>
   );
 }

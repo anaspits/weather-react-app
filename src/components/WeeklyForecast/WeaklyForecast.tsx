@@ -15,11 +15,11 @@ import classes1 from "./weeklyForecast.module.css";
 import "@mantine/carousel/styles.css";
 
 const weeklyData = [
-  { day: "Fri", icon: "icon-sun", temp: "26°C" },
-  { day: "Sat", icon: "icon-cloud", temp: "22°C" },
-  { day: "Sun", icon: "icon-sun", temp: "26°C" },
-  { day: "Mon", icon: "icon-rain", temp: "20°C" },
-  { day: "Tue", icon: "icon-cloud", temp: "18°C" },
+  { day: "Fri", icon: "icon-rain", temp: "26°C" },
+  { day: "Sat", icon: "icon-sun", temp: "22°C" },
+  { day: "Sun", icon: "icon-cloud-sun", temp: "26°C" },
+  { day: "Mon", icon: "icon-rain-sun", temp: "20°C" },
+  { day: "Tue", icon: "icon-storm", temp: "18°C" },
 ];
 
 const airConditions = [
@@ -27,7 +27,7 @@ const airConditions = [
     label: "Real Feel",
     icon: "icon-temperature",
     value: "30°C",
-  } /* TODO add icon */,
+  },
   { label: "Wind", icon: "icon-wind", value: "0.8 km/hr" },
   { label: "Chance of rain", icon: "icon-raindrop", value: "2%" },
   { label: "UV Index", icon: "icon-sun", value: "4" },
@@ -63,9 +63,7 @@ const WeeklyForecast: React.FC = () => {
                     <Text c="white" size="lg">
                       {item.day}
                     </Text>
-                    <i
-                      className={`${item.icon} text-white text-xl`}
-                    ></i>
+                    <i className={`${item.icon} text-white text-xl`}></i>
                   </Flex>
                 </Carousel.Slide>
               ))}
@@ -82,8 +80,7 @@ const WeeklyForecast: React.FC = () => {
               direction="row"
               wrap="wrap"
             >
-              <i className="icon-heart text-white"></i>{" "}
-              {/* todo add clock icon */}
+              <i className="icon-clock text-white"></i>{" "}
               <Text c="white" size="sm">
                 {timeData.time}
               </Text>
