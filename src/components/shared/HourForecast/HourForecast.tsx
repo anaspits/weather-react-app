@@ -36,7 +36,7 @@ function HourForecast({isMobile}: HourForecastProps) {
               inner: { fontSize: 15 },
             }}
           >
-            5-dour forecast
+            5-hour forecast
           </Button>
         </span>
       </Flex>
