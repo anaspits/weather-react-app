@@ -4,8 +4,9 @@ import Menu from "@/components/Menu/Menu";
 import { SimpleGrid, BackgroundImage, Button, Grid, Group, rem, Flex } from "@mantine/core";
 import MiddleSection from "@/components/MiddleSection/MiddleSection";
 import WeeklyForecast from "@/components/WeeklyForecast/WeaklyForecast";
-import { parse } from "next-useragent";
+import { detectDevice  } from "../ModuleHandler/ModuleHandler";
 import MobileLayout from "@/components/MobileLayout/MobileLayout";
+import DesktopLayout from "@/components/DesktopLayout/DesktopLayout";
 
 type WeatherInformation = {
   city: string;
@@ -34,15 +35,6 @@ const getBackgroundImage = (condition: string) => {
   }
 };
 
-export function detectDevice(userAgent: any) {
-  const ua = parse(userAgent);
-  return {
-    isMobile: ua.isMobile,
-    isTablet: ua.isTablet,
-    isDesktop: !ua.isMobile && !ua.isTablet,
-  };
-}
-
 export async function getServerSideProps({ req }: any) {
   const userAgent = req.headers['user-agent'] || '';
   const deviceType = detectDevice(userAgent);
@@ -68,73 +60,20 @@ export default function Home({ deviceType }: any) {
         className="min-h-screen bg-cover bg-center"
       >
         <div>
-      {isMobile && <MobileLayout />}
+      {(isMobile || isTablet) && <MobileLayout />}
 
     </div>
 
-         {(isDesktop || isTablet) &&  <div className="min-h-screen p-14">
-{/*           <MainInfo />
-          <span className="hidden md:flex">
-          <Menu />
-          </span>
-<Activities /> */}
+         {isDesktop  &&  <div className="min-h-screen p-14">
 
-<Grid justify="space-between">
+{/* <Grid justify="space-between">
       <Grid.Col span={12}><MainInfo /></Grid.Col>
       <Grid.Col span={1}><Menu /></Grid.Col>
       <Grid.Col span={8} ><MiddleSection /></Grid.Col>
       <Grid.Col span={3} ><WeeklyForecast /></Grid.Col>
-    </Grid>
-                    {/* Group */}
-{/*           <Group justify="space-between" className="px-10">
-          <Button >Button 1</Button> 
-          <Button >Button 2</Button> 
-          </Group>  */}
-
-          {/* Grid */}
-{/*           <Grid justify="space-between" align="stretch" className="p-10">
-            <Grid.Col span={2} style={{ minHeight: rem(80) }}>
-            <Button >Button 3</Button> 
-            </Grid.Col>
-            <Grid.Col span={2}>
-            <Button >Button 4</Button> 
-            </Grid.Col>
-          </Grid> 
-
-          <Grid>
-      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>1</Grid.Col>
-      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>2</Grid.Col>
-      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>3</Grid.Col>
-      <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>4</Grid.Col>
     </Grid> */}
+<DesktopLayout/>
 
-          {/* Flex */}
-{/*            <Flex
-            mih={50}
-            bg="rgba(0, 0, 0, .3)"
-            gap="xl"
-            align="center"
-            direction="row"
-            wrap="wrap"
-            justify="space-between"
-          >
-            <MainInfo></MainInfo>
-            <Button>Button 1</Button>
-            <Button>Button 2</Button>
-            <Button>Button 3</Button>
-          </Flex>  */}
-
-{/*           <SimpleGrid
-            cols={{ base: 1, sm: 2, lg: 5 }}
-            spacing={{ base: 10, sm: "xl" }}
-            verticalSpacing={{ base: "md", sm: "xl" }}
-          >
-            <div className="bg-white bg-opacity-20 p-4 rounded-lg">1</div>
-            <div className="bg-white bg-opacity-20 p-4 rounded-lg">2</div>
-            <div className="bg-white bg-opacity-20 p-4 rounded-lg">3</div>
-            <div className="bg-white bg-opacity-20 p-4 rounded-lg">4</div>
-            <div className="bg-white bg-opacity-20 p-4 rounded-lg">5</div>
-          </SimpleGrid> */}
         </div>
         }
                     {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">

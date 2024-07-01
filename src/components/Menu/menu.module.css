@@ -8,5 +8,6 @@
 
 .navbarMain {
   flex: 1;
-  margin-top: rem(50px); /* todo */
+  /*  margin-top: rem(50px); */
+  align-content: end;
 }
