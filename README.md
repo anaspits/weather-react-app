@@ -31,15 +31,14 @@ You can start editing by modifying the files. The page auto-updates as you edit 
 
 ## Try out
 
-If you want to see how the \* _background_ \* changes depending on the weather you can go to `\source\repos\weather-app\src\pages\index.tsx` and change the `currentWeatherCondition` from `Cloudy` to `Stormy`, `Sunny` or `Rainy` at the `weatherInfo` const.
+If you want to see how the *background* changes depending on the weather you can go to `\src\pages\index.tsx` and change the `currentWeatherCondition` from `Cloudy` to `Stormy`, `Sunny` or `Rainy` at the `weatherInfo` const.
 
-To check the \* _mobile_ \* layout go to your broswer's DevTools click the device toolbar (in the action bar at the top left) and choose a mobile device from the list or input you custom dimensions and **refresh the page** in orde to view the app at the corresponding device dimensions.
+To check the *mobile* layout go to your broswer's DevTools click the device toolbar (in the action bar at the top left) and choose a mobile device from the list or insert you custom dimensions and **refresh the page** in orde to view the app at the corresponding device dimensions.
 
 <!-- [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages. -->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
