@@ -1,4 +1,7 @@
 import classes from "./weatherChart.module.css";
+import { HourlyData } from "../../../../httpRequests/models/hourlyData.model";
+import { parseHourlyData } from "../../../../httpRequests/parseData";
+import getHourlyData from "../../../../httpRequests/hourlyData";
 import {
   LineChart,
   CartesianGrid,
@@ -12,6 +15,7 @@ import {
 
 import CustomLabelWithIcon from "./CustomChartsComponents/CustomLabelWithIcon";
 import CustomCursor from "./CustomChartsComponents/CustomCursor";
+import { useEffect, useState } from "react";
 
 const dataDesktop = [
   { time: "Now", temp: 26, wind: "11.7km/h", icon: "cloudyNight" },
@@ -35,11 +39,18 @@ type WeatherChartProps = {
 };
 
 const WeatherChart = ({ isMobile }: WeatherChartProps) => {
+  const  [hourlyData, sethourlyData] = useState([] as  { time: string, temp: number, wind: string, icon: string }[]);
+
+useEffect(() => {
+  console.log("hourlyData", hourlyData);
+    getHourlyData().then((res) => sethourlyData(parseHourlyData(res.data).slice(0,7))).catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="md:p-4 w-full">
       <ResponsiveContainer width="100%" height={200}>
         <LineChart
-          data={isMobile ? dataMobile : dataDesktop}
+          data={hourlyData}
           margin={{ left: 20, right: 20 }}
         >
           <XAxis dataKey="time" hide padding={{ left: 30, right: 30 }} />
