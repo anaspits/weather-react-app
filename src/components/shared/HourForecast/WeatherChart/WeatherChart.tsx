@@ -1,6 +1,6 @@
 import classes from "./weatherChart.module.css";
-import { HourlyData } from "../../../../httpRequests/models/hourlyData.model";
-import { parseHourlyData } from "../../../../httpRequests/parseData";
+import { HourlyData, MockHourlyData } from "../../../../httpRequests/models/hourlyData.model";
+import {  parseHourlyData } from "../../../../httpRequests/parseData";
 import getHourlyData from "../../../../httpRequests/hourlyData";
 import {
   LineChart,
@@ -42,8 +42,12 @@ const WeatherChart = ({ isMobile }: WeatherChartProps) => {
   const  [hourlyData, sethourlyData] = useState([] as  { time: string, temp: number, wind: string, icon: string }[]);
 
 useEffect(() => {
-  console.log("hourlyData", hourlyData);
-    getHourlyData().then((res) => sethourlyData(parseHourlyData(res.data).slice(0,7))).catch((err) => console.log(err));
+  //console.log("hourlyData", hourlyData);
+    getHourlyData().then((res) => sethourlyData(parseHourlyData(res.data).slice(0,7)))      
+    .catch((err) => {
+      //console.log(err);
+      sethourlyData(parseHourlyData(MockHourlyData).slice(0, 7));
+    });
   }, []);
 
   return (
